@@ -1,7 +1,8 @@
 
 pipeline {
-   node {
-    stages {
+   agent {
+    node {
+        stages {
             stage('build') {
                 steps {
                     bat 'npm --version'
@@ -11,4 +12,5 @@ pipeline {
             }
         }
     }
+  }
 }
