@@ -1,7 +1,11 @@
 node {
-    stage('build') {
-         bat 'npm --version'
-         bat 'npm install'
-         bat 'npm start'
+    stages {
+        stage('build') {
+            steps {
+                bat 'npm --version'
+                bat 'npm install'
+                bat 'npm start'
+            }
+        }
     }
 }
