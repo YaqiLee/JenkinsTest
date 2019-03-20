@@ -1,16 +1,13 @@
 
 pipeline {
-   agent {
-    node {
-        stages {
-            stage('build') {
-                steps {
-                    bat 'npm --version'
-                    bat 'npm install'
-                    bat 'npm start'
-                }
+  agent any
+  stages {
+        stage('Build') {
+            steps {
+                bat 'npm --version'
+                bat 'npm install'
+                bat 'npm start'
             }
         }
     }
-  }
 }
