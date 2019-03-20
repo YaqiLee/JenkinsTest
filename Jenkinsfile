@@ -1,10 +1,13 @@
-node {
+
+pipeline {
+   node {
     stages {
-        stage('build') {
-            steps {
-                bat 'npm --version'
-                bat 'npm install'
-                bat 'npm start'
+            stage('build') {
+                steps {
+                    bat 'npm --version'
+                    bat 'npm install'
+                    bat 'npm start'
+                }
             }
         }
     }
