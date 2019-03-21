@@ -10,8 +10,8 @@ pipeline {
         // }
         stage('Docker build') {
             steps {
-                bat docker build -t lyqhr2018/jenkinstest .
-                bat docker push lyqhr2018:jenkinstest
+                bat 'docker build -t lyqhr2018/jenkinstest .'
+                bat 'docker push lyqhr2018:jenkinstest'
             }
         }
     }
