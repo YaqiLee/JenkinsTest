@@ -1,5 +1,8 @@
 pipeline {
   agent any
+
+  def tag = "lyqhr2018/jenkinstest:latest"
+
   stages {
         // stage('Build') {
         //     steps {
@@ -10,8 +13,8 @@ pipeline {
         // }
         stage('Docker build') {
             steps {
-                bat 'docker build -t lyqhr2018/jenkinstest .'
-                bat 'docker push lyqhr2018:jenkinstest'
+                bat ("docker build -t ${tag} .")
+                bat ("docker push ${tag}")
             }
         }
     }
