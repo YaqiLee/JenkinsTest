@@ -1,11 +1,17 @@
 pipeline {
   agent any
   stages {
-        stage('Build') {
+        // stage('Build') {
+        //     steps {
+        //         bat 'npm --version'
+        //         bat 'npm install'
+        //         bat 'npm start'
+        //     }
+        // }
+        stage('Docker build') {
             steps {
-                bat 'npm --version'
-                bat 'npm install'
-                bat 'npm start'
+                bat docker build -t lyqhr2018/jenkinstest .
+                bat docker push lyqhr2018:jenkinstest
             }
         }
     }
